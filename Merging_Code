@@ -1,37 +1,26 @@
-## Set variable as .csv file in working directory
-x <- read.csv("linkedin_connections_export_microsoft_outlook.csv")
-x <- read.csv("hw1_data.csv",header=T,na.strings="?")
-## End Set variable as .csv file in working directory
+## Merge Twitter Database Spreadsheets
+dataset1 <- read.csv("AllJ363JTwitterFollowers1.csv")
+dataset2 <- read.csv("AllJ363JTwitterFollowers2.csv")
+names(dataset1)
+names(dataset2)
+fix(dataset1)
+str(dataset2)
+merged.data <- merge(dataset1, dataset2, by="Display.Name")
+fix(merged.data)
+merged.twitterdata.all <- merge(dataset1, dataset2, by="Display.Name", all=TRUE)
+fix(merged.data.all)
+write.csv(merged.twitterdata.all, file = "AllTwitterFollowers1.csv")
+## End Merge Twitter Database Spreadsheets
 
-## Examine data
-ls()
-object.size(x)
-dim(x)
-nrow(ngap)
-ncol(ngap)
-head(x, 5)
-tail(x, 5)
-names(x)
-summary(x)
-str(x)
-fix(x)
-## End Examine data
-
-## Remove Not Available data
-y <- na.omit(x)
-
-## Merge .csv files from downloaded spreadsheets
-if(!file.exists("./data")){dir.create("./data")}
-fileUrL1 = "https://dl.dropboxusercontent.com/u/7710864/data/reviews-apr29.csv"
-fileUrL2 = "https://dl.dropboxusercontent.com/u/7710864/data/solutions-apr29.csv"
-download.file(fileUrL1, destfile = "./data/reviews.csv")
-download.file(fileUrL2, destfile = "./data/solutions.csv")
-reviews = read.csv("./data/reviews.csv"); solutions <- read.csv("./data/solutions.csv")
-head(reviews, 2)
-head(solutions, 2)
-names(reviews)
-names(solutions)
-mergedData = merge(reviews, solutions, by.x = "solution_id", by.y = "id", all=TRUE)
-head(mergedData)
-intersect(names(solutions), names(reviews))
-## End Merge .csv files from downloaded spreadsheets
+## Merge Company List Spreadsheets
+dataset3 <- read.csv("CompanyListSpreadsheet1.csv")
+dataset4 <- read.csv("CompanyListSpreadsheet2.csv")
+names(dataset3)
+names(dataset4)
+fix(dataset3)
+str(dataset4)
+merged.companydata.all <- merge(dataset3, dataset4, by.x="Organization.Name", by.y="Company.Name", all=TRUE)
+str(merged.companydata.all)
+fix(merged.companydata.all)
+write.csv(merged.companydata.all, file = "AllCompanyContacts1.csv")
+## End Merge Company List Spreadsheets
