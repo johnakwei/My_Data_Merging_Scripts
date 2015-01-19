@@ -8,7 +8,8 @@ Open "Git Bash", and use "cd" to locate your local folder "GitHub".
 
 Once inside the local folder "GitHub" with Git Bash, you can sync your github.com content.
 
-Use "git clone https://github.com/youraccountname/github repo name" to download your github.com repos into the local folder "GitHub".
+Use "git clone https://github.com/youraccountname/github repo name" to download your github.com repos into
+the local folder "GitHub".
 
 - git clone https://github.com/youraccountname/github repo name
 
@@ -24,29 +25,29 @@ Then "git add" them one at a time:
 
 Then "git commit" the files:
 
-- git commit
+- git commit -m "your message"
 
-Then exit that commit window by pressing ESC and then typing :wq.
 Then "git push"" your files to remote github:
 
-- git push origin master
+- git push
 
-After making changes to local files within your PC,
-in order to upload to github.com:
+After making changes to local files within your PC, in order to upload to github.com:
 
-Specify the files to add to the next commit, as you might not want to commit all changes you made, or all files you have in the directory. Git cannot guess this:
+Specify the files to add to the next commit, as you might not want to commit all changes you made,
+or all files you have in the directory. Git cannot guess this:
 
 -  git add file1 file2 file3
 
 Then commit the changed files:
 
--  git commit -m "commit message"
+-  git commit -m "your message"
 
 If you want to commit all the changes you made to files:
 
--  git commit -a -m "commit message"
+-  git commit -a -m "your message"
 
-You can now "git push" to the matching repo on github.com. You don't need to push after each commit, "git push" will push everything uncommitted to github.com.
+You can now "git push" to the matching repo on github.com. You don't need to push after each commit,
+"git push" will push everything uncommitted to github.com.
 
 -  git push
 
